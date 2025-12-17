@@ -1,0 +1,141 @@
+/* FULL PAGE */
+.register-page {
+    width: 100%;
+    height: 100vh;
+    background: var(--background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* GLASS CARD */
+.register-card {
+    width: 480px;
+    padding: 50px 45px;
+    border-radius: 28px;
+
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(16px);
+
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+
+    animation: fadeIn 0.6s ease forwards;
+}
+
+/* TITLE + SUBTITLE */
+.register-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #0F172A;
+    margin-bottom: 8px;
+}
+
+.register-subtitle {
+    font-size: 1rem;
+    color: #1f2937;
+    margin-bottom: 30px;
+}
+
+/* LABELS */
+.register-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #0f172a;
+    margin-bottom: 6px;
+    display: block;
+}
+
+/* INPUTS */
+.register-input {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 18px;
+
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+
+    background: rgba(255, 255, 255, 0.75);
+    color: #0F172A;
+    font-size: 0.95rem;
+
+    outline: none;
+    transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.register-input::placeholder {
+    color: #6b7280;
+}
+
+.register-input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(0, 121, 145, 0.25);
+}
+
+/* ERROR */
+.register-error {
+    color: #dc2626;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+/* SUBMIT BUTTON */
+.register-submit-btn {
+    width: 100%;
+    padding: 14px;
+    margin-top: 6px;
+
+    font-size: 1rem;
+    font-weight: 700;
+
+    border: none;
+    border-radius: 12px;
+
+    background: white;
+    color: var(--accent);
+    cursor: pointer;
+
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    transition: all 0.25s ease;
+}
+
+.register-submit-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.register-submit-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* BOTTOM TEXT */
+.register-bottom-text {
+    text-align: center;
+    margin-top: 22px;
+    font-size: 0.95rem;
+    color: #1f2937;
+}
+
+.register-bottom-text a {
+    color: var(--accent);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.register-bottom-text a:hover {
+    text-decoration: underline;
+}
+
+/* FADE IN */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,22 @@
+:root {
+  --primary-text: #0F172A;
+  --secondary-text: #FFFFFF;
+  --background: radial-gradient(circle at top, #78ffd6, #007991);
+  --accent: #007991;
+  --card-bg: rgba(255, 255, 255, 0.28);
+  --card-border: rgba(255, 255, 255, 0.35);
+  --text-muted: #334155;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: var(--background);
+  color: var(--primary-text);
+  transition: background 0.5s ease, color 0.5s ease;
+}

@@ -1,0 +1,88 @@
+.ai-container {
+    max-width: 700px;
+    margin: 3rem auto;
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.ai-container:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+.ai-header {
+    text-align: center;
+    color: var(--primary);
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+/* Analyze button */
+.ai-btn {
+    display: block;
+    margin: 0 auto;
+    background: var(--primary);
+    color: var(--white);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.ai-btn:hover {
+    background: var(--accent);
+    color: var(--text-dark);
+    transform: scale(1.03);
+}
+
+.ai-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* Error message */
+.ai-error {
+    color: var(--error);
+    text-align: center;
+    font-weight: 500;
+    margin-top: 1rem;
+}
+
+/* Analysis box */
+.ai-result {
+    background: #f9fcfd;
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+    border: 1px solid #e2ebf0;
+    box-shadow: inset 0 0 8px rgba(126, 168, 190, 0.15);
+    animation: fadeIn 0.8s ease;
+}
+
+.ai-result pre {
+    white-space: pre-wrap;
+    color: var(--text-dark);
+    font-family: "Courier New", monospace;
+    line-height: 1.5;
+}
+
+/* Animation for the bloom effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

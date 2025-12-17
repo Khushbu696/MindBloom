@@ -1,0 +1,240 @@
+/* ---------- MAIN LAYOUT ---------- */
+.dashboard-layout {
+    display: flex;
+    height: 100vh;
+    background: var(--background);
+}
+
+/* ---------- SIDEBAR ---------- */
+.sidebar {
+    width: 240px;
+    background: rgba(0, 121, 145, 0.35);
+    backdrop-filter: blur(14px);
+    border-right: 1px solid var(--card-border);
+
+    color: var(--secondary-text);
+    padding: 2rem 1.5rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* LOGO */
+.sidebar-logo {
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: var(--secondary-text);
+}
+
+/* MENU */
+.sidebar-menu {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.sidebar-link {
+    text-decoration: none;
+    padding: 0.75rem 1rem;
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    color: var(--secondary-text);
+    opacity: 0.85;
+
+    transition: all 0.25s ease;
+}
+
+.sidebar-link .icon {
+    width: 22px;
+    opacity: 0.9;
+}
+
+/* HOVER */
+.sidebar-link:hover {
+    background: rgba(255, 255, 255, 0.2);
+    opacity: 1;
+}
+
+/* ACTIVE LINK */
+.sidebar-link.active {
+    background: linear-gradient(90deg, #4DD0E1, #7AE2C2);
+    color: var(--primary-text);
+    font-weight: 700;
+}
+
+/* LOGOUT */
+.sidebar-logout {
+    padding: 0.75rem 1rem;
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.25);
+    border: none;
+
+    color: var(--primary-text);
+    font-size: 0.95rem;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.sidebar-logout:hover {
+    background: rgba(255, 255, 255, 0.35);
+}
+
+.sidebar-logout .icon {
+    width: 22px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+/* ---------- MAIN DASHBOARD AREA ---------- */
+.dashboard-main {
+    flex: 1;
+    padding: 2rem;
+    overflow-y: auto;
+}
+
+/* ---------- OVERVIEW HEADER ---------- */
+.overview-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-text);
+}
+
+.overview-subtitle {
+    color: var(--primary-text);
+    opacity: 0.8;
+    margin-top: 4px;
+}
+
+/* ---------- METRICS GRID ---------- */
+.metrics-grid {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+.metric-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(14px);
+
+    padding: 1.5rem;
+    border-radius: 16px;
+
+    border: 1px solid var(--card-border);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.metric-label {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+.metric-number {
+    font-size: 1.8rem;
+    margin-top: 4px;
+    font-weight: 700;
+    color: var(--primary-text);
+}
+
+.metric-icon {
+    width: 50px;
+    opacity: 0.85;
+}
+
+/* ---------- BOTTOM GRID ---------- */
+.bottom-grid {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1.5rem;
+}
+
+/* ---------- ACTIVITY & TIPS ---------- */
+.activity-card,
+.tips-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(14px);
+
+    padding: 1.5rem;
+    border-radius: 16px;
+
+    border: 1px solid var(--card-border);
+}
+
+/* SECTION TITLE */
+.section-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--primary-text);
+}
+
+/* ACTIVITY ITEM */
+.activity-item {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 1rem;
+}
+
+.activity-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-top: 6px;
+}
+
+.activity-dot.green {
+    background: #7AE2C2;
+}
+
+.activity-dot.blue {
+    background: #4DD0E1;
+}
+
+.activity-dot.pink {
+    background: #FF6FAE;
+}
+
+.activity-text {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--primary-text);
+}
+
+.activity-time {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* ---------- QUICK TIPS ---------- */
+.tip-box {
+    padding: 1rem;
+    border-radius: 14px;
+    margin-bottom: 1rem;
+
+    background: rgba(255, 255, 255, 0.35);
+}
+
+.tip-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary-text);
+}
+
+.tip-text {
+    font-size: 0.95rem;
+    margin-top: 4px;
+    color: var(--text-muted);
+}

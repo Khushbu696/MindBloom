@@ -1,0 +1,121 @@
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: var(--background);
+    display: flex;
+    flex-direction: column;
+    color: var(--primary-text);
+}
+
+/* NAVBAR */
+.hero-nav {
+    width: 100%;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero-logo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-text);
+}
+
+.hero-nav-right {
+    display: flex;
+    gap: 15px;
+}
+
+/* LOGIN */
+.hero-nav-btn {
+    padding: 8px 18px;
+    border-radius: 10px;
+    background: transparent;
+    color: var(--primary-text);
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.25s ease;
+}
+
+.hero-nav-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* SIGN UP (PRIMARY CTA) */
+.hero-nav-btn:last-child {
+    background: white;
+    color: var(--accent);
+    border: none;
+}
+
+.hero-nav-btn:last-child:hover {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+}
+
+/* HERO CONTENT */
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 80px;
+    transform: translateY(-50%);
+}
+
+.hero-subtitle {
+    color: var(--secondary-text);
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+/* headline */
+.hero-title {
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    color: var(--primary-text);
+}
+
+.hero-text {
+    color: var(--secondary-text);
+    font-size: 1.4rem;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+/* CTA BUTTON */
+.hero-btn {
+    display: inline-block;
+    padding: 14px 38px;
+    border-radius: 14px;
+    background: white;
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 700;
+    transition: all 0.25s ease;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
+}
+
+.hero-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+}
+
+@media (max-width: 900px) {
+    .hero-content {
+        left: 30px;
+        right: 30px;
+        max-width: 100%;
+    }
+
+    .hero-title {
+        font-size: 2.6rem;
+    }
+
+    .hero-text {
+        font-size: 1.2rem;
+    }
+}

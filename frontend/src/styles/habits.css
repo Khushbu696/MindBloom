@@ -1,0 +1,293 @@
+/* =========================
+   PAGE LAYOUT
+========================= */
+.habits-page {
+    position: relative;
+    z-index: 2;
+    color: var(--primary-text);
+}
+
+/* =========================
+     HEADER
+  ========================= */
+.habits-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.habits-title {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.habits-subtitle {
+    color: rgba(15, 23, 42, 0.7);
+    margin-top: 4px;
+}
+
+/* =========================
+     ADD BUTTON
+  ========================= */
+.open-modal-btn {
+    padding: 0.65rem 1.4rem;
+    background: var(--accent);
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.open-modal-btn:hover {
+    opacity: 0.9;
+}
+
+/* =========================
+     YOUR HABITS
+  ========================= */
+.your-habits-title {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.empty-habits {
+    opacity: 0.7;
+    font-size: 0.95rem;
+}
+
+/* =========================
+     HABIT GRID
+  ========================= */
+.habit-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.2rem;
+}
+
+/* =========================
+     HABIT CARD (SQUARE)
+  ========================= */
+.habit-card {
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 16px;
+    padding: 1.2rem;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s ease;
+}
+
+.habit-card:hover {
+    transform: translateY(-2px);
+}
+
+.habit-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.habit-name {
+    font-size: 1.05rem;
+    font-weight: 700;
+}
+
+.habit-desc {
+    font-size: 0.9rem;
+    margin: 0.6rem 0;
+    opacity: 0.75;
+}
+
+/* =========================
+     CARD ACTIONS
+  ========================= */
+.habit-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.edit-btn,
+.delete-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.edit-btn {
+    color: var(--accent);
+}
+
+.delete-btn {
+    color: #e53935;
+}
+
+/* =========================
+     STREAK
+  ========================= */
+.habit-streak-box {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 8px;
+    font-weight: 600;
+}
+
+.habit-icon {
+    width: 22px;
+    opacity: 0.85;
+}
+
+/* =========================
+     MODAL OVERLAY
+  ========================= */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+/* =========================
+     ADD / EDIT MODAL (WHITE)
+  ========================= */
+.modal-card {
+    width: 100%;
+    max-width: 420px;
+    background: white;
+    border-radius: 18px;
+    padding: 2rem;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+    animation: scaleIn 0.25s ease;
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.96);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.form-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+}
+
+/* =========================
+     FORM
+  ========================= */
+.form-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+    display: block;
+}
+
+.form-input,
+.form-textarea {
+    width: 100%;
+    padding: 0.75rem 0.85rem;
+    border-radius: 10px;
+    border: 1px solid #cbd5e1;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.form-textarea {
+    resize: none;
+}
+
+/* =========================
+     MODAL ACTIONS
+  ========================= */
+.modal-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.cancel-btn {
+    flex: 1;
+    background: transparent;
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    padding: 0.7rem;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.add-btn {
+    flex: 1;
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 0.7rem;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* =========================
+     DELETE CONFIRM POPUP
+  ========================= */
+.delete-modal {
+    width: 100%;
+    max-width: 380px;
+    background: white;
+    border-radius: 16px;
+    padding: 1.8rem;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
+    animation: scaleIn 0.25s ease;
+}
+
+.delete-modal h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.delete-modal p {
+    font-size: 0.95rem;
+    opacity: 0.7;
+}
+
+.delete-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 1.5rem;
+}
+
+.delete-cancel {
+    background: #e5e7eb;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.delete-confirm {
+    background: #e53935;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+}
