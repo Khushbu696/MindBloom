@@ -26,7 +26,23 @@ export default function Habits() {
     fetchHabits();
   }, []);
 
-  /* ---------- SAVE / UPDATE HABIT ---------- */
+  const isCompletedToday = (habit) => {
+    if (!habit.lastCompleted) return false;
+    return (
+      new Date(habit.lastCompleted).toDateString() ===
+      new Date().toDateString()
+    );
+  };
+
+  const completeHabit = async (habitId) => {
+    try {
+      await axiosClient.post(`/habits/${habitId}/complete`);
+      fetchHabits();
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
   const handleSaveHabit = async (e) => {
     e.preventDefault();
     if (!title.trim()) return;
@@ -38,7 +54,7 @@ export default function Habits() {
       if (editingHabit) {
         await axiosClient.put(`/habits/${editingHabit._id}`, {
           title,
-          description
+          description,
         });
         setMessage("Habit updated!");
       } else {
@@ -62,7 +78,6 @@ export default function Habits() {
     }
   };
 
-  /* ---------- DELETE HABIT ---------- */
   const confirmDeleteHabit = async () => {
     try {
       await axiosClient.delete(`/habits/${deleteHabit._id}`);
@@ -75,8 +90,6 @@ export default function Habits() {
 
   return (
     <div className="habits-page">
-
-      {/* HEADER */}
       <div className="habits-header">
         <div>
           <h1 className="habits-title">Habit Streaks</h1>
@@ -101,10 +114,7 @@ export default function Habits() {
       {/* ADD / EDIT MODAL */}
       {showModal && (
         <div className="modal-overlay" onClick={() => setShowModal(false)}>
-          <div
-            className="modal-card"
-            onClick={(e) => e.stopPropagation()}
-          >
+          <div className="modal-card" onClick={(e) => e.stopPropagation()}>
             <h2 className="form-title">
               {editingHabit ? "Edit Habit" : "Add New Habit"}
             </h2>
@@ -147,71 +157,68 @@ export default function Habits() {
         </div>
       )}
 
-      {/* HABITS LIST */}
       <h2 className="your-habits-title">Your Habits</h2>
 
-      <div className="habit-list">
-        {habits.length === 0 ? (
-          <p className="empty-habits">
-            No habits yet. Start by creating one!
-          </p>
-        ) : (
-          <div className="habit-grid">
-            {habits.map((habit) => (
-              <div key={habit._id} className="habit-card">
-                <div className="habit-card-header">
-                  <h3 className="habit-name">{habit.title}</h3>
+      <div className="habit-grid">
+        {habits.map((habit) => {
+          const completedToday = isCompletedToday(habit);
 
-                  <div className="habit-actions">
-                    <button
-                      className="edit-btn"
-                      onClick={() => {
-                        setEditingHabit(habit);
-                        setTitle(habit.title);
-                        setDescription(habit.description || "");
-                        setShowModal(true);
-                      }}
-                    >
-                      Edit
-                    </button>
+          return (
+            <div key={habit._id} className="habit-card">
+              <div className="habit-card-header">
+                <h3 className="habit-name">{habit.title}</h3>
 
-                    <button
-                      className="delete-btn"
-                      onClick={() => setDeleteHabit(habit)}
-                    >
-                      Delete
-                    </button>
-                  </div>
-                </div>
+                <div className="habit-actions">
+                  <button
+                    className="edit-btn"
+                    onClick={() => {
+                      setEditingHabit(habit);
+                      setTitle(habit.title);
+                      setDescription(habit.description || "");
+                      setShowModal(true);
+                    }}
+                  >
+                    Edit
+                  </button>
 
-                <p className="habit-desc">{habit.description}</p>
-
-                <div className="habit-streak-box">
-                  <img src={flame} alt="Streak" className="habit-icon" />
-                  <span>{habit.streak}</span>
+                  <button
+                    className="delete-btn"
+                    onClick={() => setDeleteHabit(habit)}
+                  >
+                    Delete
+                  </button>
                 </div>
               </div>
-            ))}
-          </div>
-        )}
+
+              <p className="habit-desc">{habit.description}</p>
+
+              <div className="habit-streak-box">
+                <img src={flame} alt="Streak" className="habit-icon" />
+                <span>{habit.streak}</span>
+              </div>
+
+              <button
+                className={`complete-btn ${completedToday ? "completed" : ""
+                  }`}
+                disabled={completedToday}
+                onClick={() => completeHabit(habit._id)}
+              >
+                {completedToday ? "Completed Today" : "Complete Today"}
+              </button>
+            </div>
+          );
+        })}
       </div>
 
-      {/* DELETE CONFIRMATION MODAL */}
       {deleteHabit && (
-        <div
-          className="modal-overlay"
-          onClick={() => setDeleteHabit(null)}
-        >
-          <div
-            className="delete-modal"
-            onClick={(e) => e.stopPropagation()}
-          >
+        <div className="modal-overlay" onClick={() => setDeleteHabit(null)}>
+          <div className="delete-modal" onClick={(e) => e.stopPropagation()}>
             <h3>Delete Habit?</h3>
             <p>This action cannot be undone.</p>
 
             <div className="modal-actions">
               <button
-                className="cancel-btn"
+                className="delete-cancel"
                 onClick={() => setDeleteHabit(null)}
               >
                 Cancel
@@ -227,7 +234,6 @@ export default function Habits() {
           </div>
         </div>
       )}
-
     </div>
   );
 }
