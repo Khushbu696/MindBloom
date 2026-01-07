@@ -12,25 +12,23 @@ exports.listPosts = async (req, res, next) => {
     try {
         const posts = await CommunityPost.find()
             .populate("user", "username")
-            .sort({ createdAt: -1 })
-            .limit(100);
+            .sort({ createdAt: -1 });
 
-        const sanitized = posts.map(p => ({
-            id: p._id,
-            title: p.title,
+        const formatted = posts.map(p => ({
+            _id: p._id,
             body: p.body,
-            likesCount: p.likes.length,
             createdAt: p.createdAt,
-            author: p.anonymous ? "Anonymous" : p.user.username
+            author: p.anonymous ? "Anonymous" : p.user.username,
+            isMine: p.user._id.toString() === req.user._id.toString(),
+            likesCount: p.likes.length,
+            likedByUser: p.likes.includes(req.user._id)
         }));
 
-        res.json(sanitized);
-
+        res.json(formatted);
     } catch (err) {
         next(err);
     }
 };
-
 
 exports.toggleLike = async (req, res, next) => {
     try {
@@ -42,4 +40,22 @@ exports.toggleLike = async (req, res, next) => {
         await post.save();
         res.json({ likes: post.likes.length });
     } catch (err) { next(err); }
+};
+
+exports.deletePost = async (req, res, next) => {
+    try {
+        const post = await CommunityPost.findOne({
+            _id: req.params.id,
+            user: req.user._id
+        });
+
+        if (!post) {
+            return res.status(403).json({ message: "Not authorized" });
+        }
+
+        await post.deleteOne();
+        res.json({ message: "Post deleted" });
+    } catch (err) {
+        next(err);
+    }
 };
