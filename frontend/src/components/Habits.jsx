@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../styles/Habits.css";
 
-const API = "http://localhost:5000/api/habits";
+const API = "https://mindbloom-er4l.onrender.com/api/habits";
 
 const emojiOptions = [
   "🧘",

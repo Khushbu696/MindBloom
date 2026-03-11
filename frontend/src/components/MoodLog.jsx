@@ -50,7 +50,7 @@ const MoodLog = () => {
   // Fetch recent moods
   const fetchMoods = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/moods", {
+      const res = await fetch("https://mindbloom-er4l.onrender.com/api/moods", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -76,7 +76,7 @@ const MoodLog = () => {
     }
 
     try {
-      const res = await fetch("http://localhost:5000/api/moods", {
+      const res = await fetch("https://mindbloom-er4l.onrender.com/api/moods", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

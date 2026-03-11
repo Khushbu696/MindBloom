@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "../styles/Rewards.css";
 
-const API = "http://localhost:5000/api/rewards";
+const API = "https://mindbloom-er4l.onrender.com/api/rewards";
 
 const Rewards = () => {
   const [selectedCategory, setSelectedCategory] = useState("all");

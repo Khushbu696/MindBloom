@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "../styles/Dashboard.css";
 
-const API = "http://localhost:5000/api/dashboard";
+const API = "https://mindbloom-er4l.onrender.com/api/dashboard";
 
 const Dashboard = () => {
   const [data, setData] = useState(null);

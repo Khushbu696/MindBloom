@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../styles/Community.css";
 
-const API = "http://localhost:5000/api/posts";
+const API = "https://mindbloom-er4l.onrender.com/api/posts";
 
 const Community = () => {
   const [posts, setPosts] = useState([]);
