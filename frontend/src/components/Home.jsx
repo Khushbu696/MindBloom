@@ -124,28 +124,28 @@ const Home = () => {
           <div className="hero-visual">
             <div className="floating-card card-1 float">
               <div className="mini-card">
-                <span className="mini-icon">😊</span>
+                <span className="mini-icon">🧘</span>
                 <div className="mini-content">
-                  <div className="mini-label">Today's Mood</div>
-                  <div className="mini-value">Happy</div>
+                  {/* <div className="mini-label">Today's Mood</div> */}
+                  <div className="mini-value">Pause</div>
                 </div>
               </div>
             </div>
             <div className="floating-card card-2 float">
               <div className="mini-card">
-                <span className="mini-icon">🔥</span>
+                <span className="mini-icon">🌬️</span>
                 <div className="mini-content">
-                  <div className="mini-label">Streak</div>
-                  <div className="mini-value">7 Days</div>
+                  {/* <div className="mini-label">Streak</div> */}
+                  <div className="mini-value">Breathe</div>
                 </div>
               </div>
             </div>
             <div className="floating-card card-3 float">
               <div className="mini-card">
-                <span className="mini-icon">🏆</span>
+                <span className="mini-icon">🌱</span>
                 <div className="mini-content">
-                  <div className="mini-label">Achievements</div>
-                  <div className="mini-value">12</div>
+                  {/* <div className="mini-label">Achievements</div> */}
+                  <div className="mini-value">Bloom</div>
                 </div>
               </div>
             </div>
