@@ -1,93 +1,151 @@
-# MindBloom – Mental Wellness Web App
+# 🌸 MindBloom – Mental Wellness Tracker
 
-MindBloom is a full-stack mental wellness platform designed to help users build healthy habits, track moods, engage with a supportive community, and stay motivated through rewards and progress tracking.
+MindBloom is a full-stack mental wellness web application that helps users track their emotions, build healthy habits, and engage with a supportive community.
 
-This project focuses on real-world full-stack development, combining frontend UI/UX with backend APIs, authentication, and database management.
+Users can log their mood, maintain habit streaks, share anonymous posts, and unlock achievements while improving their mental wellness journey.
 
-### 🚧 Status: Actively under development (core features implemented, improvements ongoing)
+---
 
-## ✨ Features
-🔐 Authentication
+# 🚀 Live Demo
 
-- User registration and login
+Frontend (Netlify) : 
+https://k-mindbloom.netlify.app
 
-- JWT-based authentication
+Backend API (Render) : 
+https://mindbloom-er4l.onrender.com
 
-- Protected routes for authenticated users
+---
 
-📊 Dashboard (Overview)
+# 📸 Project Screenshots
 
-- Mood logs count
+## Dashoard
+![Dashboard Screenshot](screenshots/dashboard.jpeg)
 
-- Active habits
+## Mood Logs
+![MoodLogs Screenshot](screenshots/moodlog.jpeg)
 
-- Current streak
+## Habit Tracker
+![Habits Screenshot](screenshots/habit.jpeg)
 
-- Total points earned
+## Community
+![Community Screenshot](screenshots/community.jpeg)
 
-- Recent activity feed
+## Rewards
+![Rewards Screenshot](screenshots/rewards.jpeg)
 
-📝 Mood Logs
+---
 
-- Log daily moods
+# ✨ Features
 
-- Track emotional patterns over time
+### 🌤 Mood Tracking
+- Log daily mood with emoji and notes
+- Weekly mood visualization
+- Helps identify emotional patterns
 
-🔥 Habit Streaks
-
-- Create and manage habits
-
+### 🌱 Habit Tracker
+- Create daily or weekly habits
 - Track habit streaks
-
 - Edit and delete habits
+- Automatic reset for daily and weekly habits
 
-- Progress tracking
+### 🤝 Community
+- Anonymous community posts
+- Like posts to support others
+- Expand long posts with Read More
 
-🌍 Community
+### 🏆 Rewards & Achievements
+- Earn Bloom Points
+- Unlock achievements
+- Track progress toward new rewards
 
-- Create posts
+### 📊 Dashboard Overview
+- Today's mood summary
+- Habit progress
+- Recent achievements
+- Quick action shortcuts
 
-- Like posts
+---
 
-- View community activity
+# 🛠 Tech Stack
 
-🎁 Rewards System
+### Frontend
+- React
+- Vite
+- CSS
+- Fetch API
 
-- Earn points for completing tasks
-
-- View rewards by status (Not Started / In Progress / Completed)
-
-- Redeem rewards
-
-- Track claimed rewards
-
-## 🛠 Tech Stack
-Frontend
-
-- React (Vite)
-
-- JavaScript
-
-- CSS (custom styling)
-
-- Axios
-
-Backend
-
+### Backend
 - Node.js
-
 - Express.js
-
-- MongoDB
-
+- MongoDB Atlas
 - Mongoose
 
-- JWT Authentication
+### Deployment
+- Netlify (Frontend)
+- Render (Backend)
 
-Other Tools
+---
 
-- bcrypt.js (password hashing)
+# 📂 Project Structure
+```
+MindBloom
+│
+├── backend
+│   ├── models
+│   ├── routes
+│   ├── server.js
+│   └── package.json
+│
+├── frontend
+│   ├── src
+│   │   ├── components
+│   │   ├── styles
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│   │
+│   └── package.json
+│
+└── README.md
+```
+---
 
-- Helmet (security)
+# ⚙️ Local Installation
 
-- Rate limiting middleware
+1️⃣ Clone Repository
+```
+git clone https://github.com/Khushbu696/MindBloom.git
+cd MindBloom
+```
+
+2️⃣ Backend Setup
+```
+cd backend
+npm install
+```
+Create .env
+```
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_secret_key
+JWT_EXPIRES_IN=7d
+```
+Run Backend
+```
+npm start
+```
+
+3️⃣ Frontend Setup
+```
+cd frontend
+npm install
+npm run dev
+```
+
+---
+
+# 📈 Future Improvements
+- Community replies and comments
+- Mood analytics charts
+- Guided meditation section
+- Notification reminders
+- Mobile UI improvements
+- User profile customization
