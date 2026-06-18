@@ -6,13 +6,22 @@ Users can log their mood, maintain habit streaks, share anonymous posts, and unl
 
 ---
 
-# 🚀 Live Demo
+## Links
 
-Frontend (Netlify) : 
+1. Live URL:
+```text 
 https://k-mindbloom.netlify.app
+```
 
-Backend API (Render) : 
-https://mindbloom-er4l.onrender.com
+2. Youtube Demo Video:
+```text
+https://www.youtube.com/watch?v=zs8yB1loTUY&feature=youtu.be
+```
+
+3. API Documentation (Postman):
+```text
+https://documenter.getpostman.com/view/39216679/2sBXwmRYck
+```
 
 ---
 
